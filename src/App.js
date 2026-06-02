@@ -19,6 +19,11 @@ function Counter() {
     flexDirection: "column",
   };
 
+  const date = new Date();
+  date.setDate(date.getDate() + count);
+
+  const displayDate = date.toDateString();
+
   return (
     <div style={style}>
       <div>
@@ -31,6 +36,14 @@ function Counter() {
         <span>{`Count: ${count}`}</span>
         <button onClick={() => setCount((s) => s + step)}>+</button>
       </div>
+      <p>
+        {count === 0
+          ? "Today is"
+          : count > 0
+            ? `${count} days from today is `
+            : `${Math.abs(count)} days ago was`}
+        {displayDate}
+      </p>
     </div>
   );
 }
