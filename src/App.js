@@ -9,8 +9,8 @@ export default function App() {
 }
 
 function Counter() {
-  const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
+  const [count, setCount] = useState(0);
 
   const style = {
     display: "flex",
@@ -22,14 +22,14 @@ function Counter() {
   return (
     <div style={style}>
       <div>
-        <button onClick={() => setCount((s) => s - 1)}>-</button>
-        <span>{`Count: ${count}`}</span>
-        <button onClick={() => setCount((s) => s + 1)}>+</button>
+        <button onClick={() => setStep((s) => s - 1)}>-</button>
+        <span>{`Step: ${step}`}</span>
+        <button onClick={() => setStep((s) => s + 1)}>+</button>
       </div>
       <div>
-        <button onClick={() => setStep((s) => s - count)}>-</button>
-        <span>{`Step: ${step}`}</span>
-        <button onClick={() => setStep((s) => s + count)}>+</button>
+        <button onClick={() => setCount((s) => s - step)}>-</button>
+        <span>{`Count: ${count}`}</span>
+        <button onClick={() => setCount((s) => s + step)}>+</button>
       </div>
     </div>
   );
