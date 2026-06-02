@@ -9,8 +9,8 @@ export default function App() {
 }
 
 function Counter() {
-  const [count, setCount] = useState(1);
-  const [step, setStep] = useState(0);
+  const [count, setCount] = useState(0);
+  const [step, setStep] = useState(1);
 
   const style = {
     display: "flex",
